@@ -1,0 +1,36 @@
+{
+  "tests": [
+    {
+      "n": 85578,
+      "actual": 3661839831,
+      "expected": 3661839831,
+      "passed": true,
+      "stdout": "Enter N (1..10000000):\nN = 85578, SUM = 3661839831\n"
+    },
+    {
+      "n": 55016,
+      "actual": 1513407636,
+      "expected": 1513407636,
+      "passed": true,
+      "stdout": "Enter N (1..10000000):\nN = 55016, SUM = 1513407636\n"
+    },
+    {
+      "n": 85509,
+      "actual": 3655937295,
+      "expected": 3655937295,
+      "passed": true,
+      "stdout": "Enter N (1..10000000):\nN = 85509, SUM = 3655937295\n"
+    }
+  ],
+  "boundary_tests": [
+    1,
+    10000000
+  ],
+  "rejected_inputs": [
+    "0",
+    "-1",
+    "10000001",
+    "abc"
+  ],
+  "all_passed": true
+}

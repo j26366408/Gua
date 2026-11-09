@@ -1,0 +1,12 @@
+{
+  "name": "江文樺",
+  "student_id": "415217073",
+  "date": "2026-11-09",
+  "local_original_commit": "7c3f498a0be7a05dec5952d1a4c03009f26a6e4a",
+  "local_commented_commit": "a14043adcef43aebf1173b44684e307f07d226ea",
+  "github_original_commit": "bd15017edd045be2b0ddf43614a60c871d31c8d8",
+  "github_commented_commit": "d21bc9eda4975115c53c029b4a3b6fbaadec5854",
+  "github_repository": "https://github.com/j26366408/Gua",
+  "github_path": "ai-numerical-exam-415217073",
+  "transfer": "GitHub API mirrors the source; fortran-history.bundle preserves the exact local commits."
+}
