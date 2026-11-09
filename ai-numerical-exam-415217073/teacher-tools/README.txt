@@ -2,7 +2,7 @@
 
 一、直接操作評分系統（免安裝）
 雙擊 scoring.html，以瀏覽器開啟。
-選擇前四題達標或未達標，按「計算得分」。
+輸入前四題的實際結果，按「檢查輸入並自動評分」。
 每題達標給 20 分；第五題系統自身通過檢查時給 20 分。
 
 二、執行真正的 Fortran 程式（需先安裝 gfortran）
@@ -17,8 +17,18 @@ mkdir build
 gfortran -std=f2008 -Wall -Wextra -Werror -fcheck=all -O2 sum_to_n.f90 -o build/sum_to_n
 
 三、其他檔案
-grade.py：Python 終端機評分程式，可執行 python grade.py。
+auto_grade.py：真正執行編譯與測試的自動評分程式。
 fortran-history.bundle：本地端原版與逐行註解版完整版本歷史。
 evidence/：原版、註解版編譯與三次隨機測試結果。
 
 網頁上的即時加總示範以 JavaScript 在瀏覽器運算；真正的 Fortran 執行紀錄另外標示。
+
+四、真正自動評分（新版第五題）
+需要 Python 3.9 以上、Git、gfortran，以及可連線 GitHub 的網路。
+Windows：雙擊 run_auto_grade_windows.bat。
+macOS/Linux：執行 sh run_auto_grade_macos_linux.sh。
+也可手動執行 python auto_grade.py --project . --output auto-assessment.json。
+系統會實際編譯及執行 Fortran、重新隨機驗算三組、還原 Git bundle 檢查原版與註解版，並下載 GitHub 檔案核對內容。
+輸出的 auto-assessment.json 可匯入 scoring.html。網頁會重新判定各題，不會直接相信 JSON 裡的總分。
+若缺少工具或網路暫時無法存取，會標為 unverified（待驗證）。
+網頁本身只能依輸入紀錄比對與連線查 GitHub；重新實際執行 Fortran 必須使用上述 Python 評分程式。

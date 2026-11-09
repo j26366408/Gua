@@ -20,7 +20,7 @@ N 的範圍為 1 到 10,000,000；使用 64 位元整數與迴圈加總。
 `fortran-history.bundle` 保留本地端原版及逐行註解版兩次認錄，原版先編譯與驗證再提交，註解版重新編譯驗證後再提交。
 
 ```sh
-git clone fortran-history.bundle restored-project
+git clone --branch main fortran-history.bundle restored-project
 cd restored-project
 git log --oneline
 ```
@@ -37,3 +37,14 @@ git log --oneline
 網頁上方「老師操作區」新增 N 輸入、即時計算、三組隨機試算、評分入口與程式包下載。網頁試算以 JavaScript 執行；真正 Fortran 的執行紀錄仍在第一、二題。
 
 `teacher-tools/` 含免安裝的 scoring.html，以及需 gfortran 的 Windows / macOS / Linux 編譯執行腳本。`dist/teacher-tools.zip` 為整包下載。
+
+
+## 第五題：自動判定版
+
+`auto_grade.py` 會真正編譯並執行 Fortran、隨機測試三組、從 bundle 還原兩版重新編譯、檢查每行註解與 Git 父子關係，再向公開 GitHub 下載檔案核對。
+
+```sh
+python3 auto_grade.py --project . --output auto-assessment.json
+```
+
+`assessment.js` 與網頁接受各題實際數據及 JSON 紀錄，由程式決定達標狀態；不用人先選達標。網頁可比對輸入及連線查 GitHub，真正重新編譯請執行 Python 評分器。`teacher-tools/scoring.html` 是可離線開啟的獨立評分頁（GitHub 即時核對仍需要網路）。
