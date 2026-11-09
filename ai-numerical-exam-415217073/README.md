@@ -30,3 +30,10 @@ git log --oneline
 ## 網頁
 
 `dist/index.html` 是自含式單一網頁，包含題目、過程、完整原始碼、驗證結果、下載版控歷史與互動評分。AI 自評為 100 分，正式成績依教師評定。
+
+
+## 老師操作
+
+網頁上方「老師操作區」新增 N 輸入、即時計算、三組隨機試算、評分入口與程式包下載。網頁試算以 JavaScript 執行；真正 Fortran 的執行紀錄仍在第一、二題。
+
+`teacher-tools/` 含免安裝的 scoring.html，以及需 gfortran 的 Windows / macOS / Linux 編譯執行腳本。`dist/teacher-tools.zip` 為整包下載。
